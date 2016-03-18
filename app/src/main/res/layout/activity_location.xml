@@ -12,11 +12,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/scrollView">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:onClick="dobSelector">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -27,7 +29,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="50dp" />
+                android:layout_marginTop="30dp" />
 
             <Spinner
                 android:layout_width="wrap_content"
@@ -78,17 +80,37 @@
                 android:layout_marginTop="10dp"
                 android:layout_alignParentStart="true" />
 
-            <Button
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/submit_location"
-                android:id="@+id/submit_location"
-                android:layout_marginTop="300dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/date_of_birth"
+                android:id="@+id/date_of_birth"
                 android:layout_below="@+id/local_body_spinner"
-                android:layout_centerHorizontal="true" />
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="25dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                style="@android:style/Widget.Button"
+                android:text="@string/date_format"
+                android:id="@+id/date_format"
+                android:layout_below="@+id/date_of_birth"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:onClick="dobSelector" />
+
 
         </RelativeLayout>
 
     </ScrollView>
+
+
+
 
 </RelativeLayout>

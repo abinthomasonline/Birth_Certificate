@@ -1,8 +1,6 @@
 package com.example.abinthomasonline.birthcertificate;
 
 import android.app.ProgressDialog;
-import android.content.Context;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +8,6 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 import android.os.StrictMode;
-import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -20,6 +17,11 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
+import android.app.DatePickerDialog;
+import android.widget.DatePicker;
+import android.app.Dialog;
+import android.support.v4.app.DialogFragment;
 
 
 public class Location extends AppCompatActivity {
@@ -105,6 +107,31 @@ public class Location extends AppCompatActivity {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+    }
+
+    public static class DateOfBirthSelector extends DialogFragment
+            implements DatePickerDialog.OnDateSetListener {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            final Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+
+            return new DatePickerDialog(getActivity(), this, year, month, day);
+        }
+
+        public void onDateSet(DatePicker view, int year, int month, int day) {
+
+        }
+    }
+
+    public void dobSelector(View view)
+    {
+        DialogFragment newFragment = new DateOfBirthSelector();
+        newFragment.show(getSupportFragmentManager(), "datePicker");
 
     }
 
