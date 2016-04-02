@@ -5,6 +5,16 @@
     <string name="local_body">Local Body :</string>
     <string name="date_of_birth">Date of Birth :</string>
     <string name="date_format">dd/mm/yyyy</string>
+    <string name="gender">Gender</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="gender_other">Can not be Identified</string>
+    <string name="name_of_mother">Name of Mother</string>
+    <string name="name_of_mother_hint">Min 3 Characters</string>
+    <string name="captcha_text">Type the characters in the picture above</string>
+    <string name="captcha">Case-Sensitive</string>
+    <string name="submit_button">Submit</string>
+
 
     <string-array name="district_spinner">
         <item>Thiruvananthapuram</item>
